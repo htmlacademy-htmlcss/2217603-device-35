@@ -63,6 +63,17 @@ img {
   object-fit: contain;
 }
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
 .page-wrapper {
   /* display: grid;
   grid-template-rows: auto 1fr auto; */
@@ -86,6 +97,58 @@ img {
   text-decoration: none;
   cursor: pointer;
   padding: 0;
+}
+
+.button-more {
+  width: 220px;
+}
+
+.button-services {
+  width: 160px;
+}
+
+.button-about {
+  width: 270px;
+}
+
+.button-write {
+  width: 260px;
+}
+
+.button-basic {
+  position: relative;
+  height: 40px;
+  padding: 10px 0;
+}
+
+.button-basic::after {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 16px;
+  width: inherit;
+  height: 8px;
+  background-color: var(--extra-yellow);
+  z-index: -1;
+}
+
+.button-basic:hover::after {
+  top: 0;
+  height: inherit;
+}
+
+.button-basic:active::after {
+  top: 0;
+  height: inherit;
+  background-color: var(--extra-yellow-dark);
+}
+
+.button-basic:focus {
+  outline: 2px solid var(--extra-purple);
+}
+
+.button-basic:disabled {
+  opacity: 0.3;
 }
 
 .main-header {
@@ -150,11 +213,14 @@ img {
   text-decoration: none;
 }
 
-
 .slider-pagination {
   margin: 0;
   padding: 0;
   list-style-type: none;
+}
+
+.slider-text-column {
+  width: 560px;
 }
 
 .slider-list {
@@ -181,4 +247,188 @@ img {
 
 .slider-description {
   margin: 0;
+}
+
+.feature-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: max-content max-content max-content;
+  row-gap: 12px;
+}
+
+.short-gap {
+  column-gap: 20px;
+}
+
+.long-gap {
+  column-gap: 40px;
+}
+
+.feature-definition {
+  margin: 0;
+  font-size: 36px;
+  line-height: 30px;
+  color: var(--basic-black);
+}
+
+.feature-term {
+  font-size: 16px;
+  grid-row: 2 / 3;
+}
+
+.product-category-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: repeat(6, 160px);
+  gap: 40px;
+}
+
+.product-category-link {
+  position: relative;
+}
+
+.product-category-link::before {
+  display: block;
+  content: "";
+  width: 160px;
+  height: 160px;
+  background-color: var(--extra-yellow);
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-bottom: 32px;
+}
+
+.product-category-title {
+  text-transform: none;
+  line-height: 24px;
+  letter-spacing: -0.02em;
+  text-align: start;
+  margin: 0;
+  height: 60px;
+}
+
+.category-virtuality::before {
+  background-image: url("../images/category/virtuality.svg");
+}
+
+.category-monopods::before {
+  background-image: url("../images/category/monopods.svg");
+  background-position: bottom center;
+}
+
+.category-cameras::before {
+  background-image: url("../images/category/cameras.svg");
+}
+
+
+.category-bracelets::before {
+  background-image: url("../images/category/bracelets.svg");
+}
+
+
+.category-watch::before {
+  background-image: url("../images/category/watch.svg");
+}
+
+
+.category-copters::before {
+  background-image: url("../images/category/copters.svg");
+}
+
+.product-category-link:hover::before {
+  background-color: var(--extra-yellow-dark);
+}
+
+.product-category-link:active {
+  opacity: 0.3;
+}
+
+/* Фокус не доделан */
+/* .product-category-link::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left:0;
+  outline: 2px solid var(--extra-purple);
+  width: 160px;
+  height: 253px;
+  display: none;
+} */
+/*
+.product-category-link:focus-within > .product-category-link::after  {
+  display: block;
+  outline: 2px solid var(--extra-purple);
+} */
+
+.services-info {
+  position: relative;
+  min-height: 320px;
+  display: flex;
+}
+
+.services-button-list {
+  margin: auto 0;
+  padding: 0;
+  list-style-type: none;
+  max-width: 280px;
+}
+
+.active-button {
+  width: 280px;
+  background-color: var(--basic-black);
+
+}
+
+.active-button .button {
+  color: var(--extra-yellow)
+}
+
+.services-button:not(:last-child) {
+  margin-bottom: 35px;
+}
+
+.services-info::after {
+  content: "";
+  position: absolute;
+  width: 7px;
+  height: 319px;
+  top: 0;
+  left: 280px;
+  background-color: var(--basic-black);
+}
+
+.services-card-list {
+  margin: auto 0 auto 116px;
+  padding: 0;
+  list-style-type: none;
+}
+
+.services-card {
+  display: none;
+  max-width: 730px;
+}
+
+.active-card {
+  display: block;
+}
+
+.services-card-title {
+  margin-bottom: 34px;
+}
+
+.services-card-text {
+  margin: 0;
+}
+
+.services-card-wrapper {
+  display: flex;
+}
+
+.services-description {
+  max-width: 480px;
+  margin-right: 83px;
 }
