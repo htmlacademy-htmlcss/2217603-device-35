@@ -109,30 +109,33 @@
         <section class="slider">
           <h2 class="visually-hidden">Главный слайдер.</h2>
 
-          <button class="slider-button slider-prev" type="button">
-            <span class="visually-hidden">Предыдущее фото.</span>
-          </button>
-          <button class="slider-button slider-next" type="button">
-            <span class="visually-hidden">Следующее фото.</span>
-          </button>
-          <ol class="slider-pagination">
-            <li class="slider-pagination-item">
-              <button class="slider-pagination-button slider-pagination-button-current" type="button">
-                <span class="visually-hidden">1 слайд.</span>
+          <div class="slider-wrapper">
+            <div class="slider-controls">
+              <button class="slider-button slider-prev" type="button">
+                <span class="visually-hidden">Предыдущее фото.</span>
               </button>
-            </li>
-            <li class="slider-pagination-item">
-              <button class="slider-pagination-button" type="button">
-                <span class="visually-hidden">2 слайд.</span>
+              <button class="slider-button slider-next" type="button">
+                <span class="visually-hidden">Следующее фото.</span>
               </button>
-            </li>
-            <li class="slider-pagination-item">
-              <button class="slider-pagination-button" type="button">
-                <span class="visually-hidden">3 слайд.</span>
-              </button>
-            </li>
-          </ol>
-
+            </div>
+            <ol class="slider-pagination">
+              <li class="slider-pagination-item">
+                <button class="slider-pagination-button slider-pagination-button-current" type="button">
+                  <span class="visually-hidden">1 слайд.</span>
+                </button>
+              </li>
+              <li class="slider-pagination-item">
+                <button class="slider-pagination-button" type="button">
+                  <span class="visually-hidden">2 слайд.</span>
+                </button>
+              </li>
+              <li class="slider-pagination-item">
+                <button class="slider-pagination-button" type="button">
+                  <span class="visually-hidden">3 слайд.</span>
+                </button>
+              </li>
+            </ol>
+          </div>
           <ul class="slider-list">
             <li class="slider-item slider-item-current">
               <span class="slide-number">01</span>
@@ -365,37 +368,39 @@
           </a>
         </section>
 
-        <section class="about-us">
-          <h2 class="about-us-title main-title">О нас</h2>
-          <p class="about-us-text">Огромный выбор гаджетов не оставит равнодушным гика, который есть в каждом из нас.
-          </p>
-          <p class="about-us-text">Мы можем доставить ваш товар в самые отдалённые уголки России транспортными
-            компаниями:
-          </p>
-          <ul class="about-us-list">
-            <li class="about-us-item">Меловые линии</li>
-            <li class="about-us-item">СДИК</li>
-            <li class="about-us-item">ТоксБерри</li>
-          </ul>
-          <button class="button button-basic button-about">Подробнее о нас</button>
-        </section>
+        <div class="two-section-block">
+          <section class="about-us">
+            <h2 class="about-us-title main-title">О нас</h2>
+            <p class="about-us-text">Огромный выбор гаджетов не оставит равнодушным гика, который есть в каждом из нас.
+            </p>
+            <p class="about-us-text">Мы можем доставить ваш товар в самые отдалённые уголки России транспортными
+              компаниями:
+            </p>
+            <ul class="about-us-list">
+              <li class="about-us-item">Меловые линии</li>
+              <li class="about-us-item">СДИК</li>
+              <li class="about-us-item">ТоксБерри</li>
+            </ul>
+            <button class="button button-basic button-about">Подробнее о нас</button>
+          </section>
 
-        <section class="contacts-block" id="contacts">
-          <h2 class="contacts-title main-title">Контакты</h2>
-          <p class="contacts-text">Вы можете забрать товар сами, заехав в наш офис. Заодно сможете проверить
-            работоспособность покупки.</p>
-          <h3 class="contacts-subtitle">Интернет-магазин «Девайс»</h3>
-          <address class="contacts-address">
-            <p class="contacts-address-text">Санкт-Петербург, набережная реки Карповки, 5, литера П.</p>
-            <a class="contacts-phone" href="tel:+78128121212">+7 (812) 812-12-12</a>
-          </address>
-          <h3 class="contacts-subtitle">Время работы</h3>
-          <ul class="contacts-schedule">
-            <li class="contacts-schedule-item">пн—пт: с 10:00 до 22:00</li>
-            <li class="contacts-schedule-item">сб—вс: с 10:00 до 19:00</li>
-          </ul>
-          <button class="button button-basic button-write">Напишите нам</button>
-        </section>
+          <section class="contacts-block" id="contacts">
+            <h2 class="contacts-title main-title">Контакты</h2>
+            <p class="contacts-text">Вы можете забрать товар сами, заехав в наш офис. Заодно сможете проверить
+              работоспособность покупки.</p>
+            <h3 class="contacts-subtitle">Интернет-магазин «Девайс»</h3>
+            <address class="contacts-address">
+              <p class="contacts-address-text">Санкт-Петербург, набережная реки Карповки, 5, литера П.</p>
+              <a class="contacts-phone" href="tel:+78128121212">+7 (812) 812-12-12</a>
+            </address>
+            <h3 class="contacts-subtitle">Время работы</h3>
+            <ul class="contacts-schedule">
+              <li class="contacts-schedule-item">пн—пт: с 10:00 до 22:00</li>
+              <li class="contacts-schedule-item">сб—вс: с 10:00 до 19:00</li>
+            </ul>
+            <button class="button button-basic button-write">Напишите нам</button>
+          </section>
+        </div>
 
         <section class="subscribe">
           <h2 class="subscribe-title main-title">Подпишитесь на рассылку</h2>
