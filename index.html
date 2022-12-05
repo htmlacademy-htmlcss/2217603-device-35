@@ -18,49 +18,76 @@
               alt="Логотип сайта Девайс.">
           </a>
           <ul class="navigation-list">
-            <li class="navigation-item">
+            <li class="navigation-item search">
               <form class="header-search-form" action="https://echo.htmlacademy.ru/courses" method="get">
                 <label class="visually-hidden" for="header-search">Поиск по сайту</label>
+                <span class="header-search-icon"></span>
                 <input class="header-search-field" type="text" name="header-search" id="header-search"
                   placeholder="Поиск по сайту">
                 <button class="header-search-button" type="submit">Найти</button>
               </form>
             </li>
-            <li class="navigation-item">
+            <li class="navigation-item log-in">
               <a class="navigation-link header-log-in" href="#">Войти</a>
             </li>
-            <li class="navigation-item">
+            <li class="navigation-item compare">
               <a class="navigation-link header-compare" href="#">Сравнить</a>
             </li>
-            <li class="navigation-item">
-              <a class="navigation-link header-basket" href="#">Корзина
+            <li class="navigation-item basket">
+              <a class="navigation-link header-basket" href="#">
+                <svg class="header-basket-icon" aria-hidden="true" focusable="false" width="16" height="14" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="m15.3 5-3.5.2L8.6.3C8.5.1 8.2 0 8 0c-.2 0-.5.1-.6.3L4.2 5.2H.7c-.4 0-.7.3-.7.7v.2l1.9 6.8c.2.7.7 1.1 1.4 1.1h9.4c.7 0 1.2-.4 1.4-1.1L16 6v-.2c0-.4-.3-.8-.7-.8ZM8 1.9l2.2 3.2H5.9L8 1.9Z"
+                    fill="#000" />
+                </svg>
                 <span class="visually-hidden">Товаров в корзине</span>
                 <span class="basket-count">2</span>
+
+                <span class="header-basket-text">Корзина</span>
               </a>
             </li>
           </ul>
           <ul class="navigation-list navigation-menu">
             <li class="navigation-menu-item">
+              <svg class="catalog-menu-icon" aria-hidden="true" focusable="false" width="50" height="51" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <circle cx="25" cy="25.79" r="24" stroke="#000" stroke-width="2" />
+                <g clip-path="url(#a)">
+                  <path d="M33 24.79h-7v-7h-2v7h-7v2h7v7h2v-7h7v-2Z" fill="#000" />
+                </g>
+                <defs>
+                  <clipPath id="a">
+                    <path fill="#fff" d="M17 17.79h16v16H17z" />
+                  </clipPath>
+                </defs>
+              </svg>
               <button class="catalog-menu button" type="button">Каталог товаров</button>
               <ul class="navigation-sublist">
-                <li class="navigation-sublist-item">
-                  <a class="navigation-sublist-link menu-virtuality" href="#">Виртуальная реальность</a>
-                </li>
-                <li class="navigation-sublist-item">
-                  <a class="navigation-sublist-link menu-monopods" href="catalog.html">Моноподы для cелфи</a>
-                </li>
-                <li class="navigation-sublist-item">
-                  <a class="navigation-sublist-link menu-cameras" href="#">Экшн-камеры</a>
-                </li>
-                <li class="navigation-sublist-item">
-                  <a class="navigation-sublist-link menu-bracelets" href="#">Фитнес-браслеты</a>
-                </li>
-                <li class="navigation-sublist-item">
-                  <a class="navigation-sublist-link menu-watch" href="#">Умные часы</a>
-                </li>
-                <li class="navigation-sublist-item">
-                  <a class="navigation-sublist-link menu-copters" href="#">Квадрокоптеры</a>
-                </li>
+                <ul class="sublist-column sublist-first-column">
+                  <li class="navigation-sublist-item">
+                    <a class="navigation-sublist-link menu-virtuality" href="#">Виртуальная реальность</a>
+                  </li>
+                  <li class="navigation-sublist-item">
+                    <a class="navigation-sublist-link menu-monopods" href="catalog.html">Моноподы для cелфи</a>
+                  </li>
+                  <li class="navigation-sublist-item">
+                    <a class="navigation-sublist-link menu-cameras" href="#">Экшн-камеры</a>
+                  </li>
+                </ul>
+                <ul class="sublist-column sublist-second-column">
+                  <li class="navigation-sublist-item">
+                    <a class="navigation-sublist-link menu-bracelets" href="#">Фитнес-браслеты</a>
+                  </li>
+                  <li class="navigation-sublist-item">
+                    <a class="navigation-sublist-link menu-watch" href="#">Умные часы</a>
+                  </li>
+                </ul>
+                <ul class="sublist-column sublist-third-column">
+                  <li class="navigation-sublist-item">
+                    <a class="navigation-sublist-link menu-copters" href="#">Квадрокоптеры</a>
+                  </li>
+                </ul>
               </ul>
             </li>
             <li class="navigation-menu-item">
@@ -435,7 +462,6 @@
         <section class="footer-html">
           <h2 class="visually-hidden">Сайт разработчика</h2>
           <a class="htmlacademy-link" href="https://htmlacademy.ru/">
-
             <svg class="htmlacademy-icon" aria-hidden="true" focusable="false" width="115" height="33" fill="none"
               xmlns="http://www.w3.org/2000/svg">
               <path fill-rule="evenodd" clip-rule="evenodd"
