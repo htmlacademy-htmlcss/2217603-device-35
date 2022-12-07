@@ -31,6 +31,7 @@
 :root {
   --basic-black: #000000;
   --basic-dark: #444444;
+  --basic-dark-grey: #c4c4c4;
   --basic-grey: #dcdcdc;
   --basic-light-grey: #ebebeb;
   --basic-light: #f0f0f0;
@@ -334,6 +335,7 @@ img {
 .catalog-menu:hover .catalog-menu-icon.plus {
   opacity: 1.0;
 }
+
 /* Не работает
 .catalog-menu:active .catalog-menu-icon.minus {
   opacity: 1.0;
@@ -721,37 +723,42 @@ img {
 
 .order-delivery {
   width: 100%;
-  height: 100px;
-  align-items: center;
+  min-height: 100px;
+
   background-color: var(--basic-light);
   margin-bottom: 70px;
-  padding: 40px 0;
+}
+
+.order-delivery-block {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .order-delivery-link {
   display: block;
-  position: relative;
-
+  /* position: relative; */
 }
 
-.order-delivery-link::before {
-  position: absolute;
-  top: -40px;
-  left: 0;
-  content: "";
-  display: block;
+.delivery-icon-container {
   width: 125px;
   height: 100px;
+  position: relative;
+}
+
+.car-container {
   background-color: var(--extra-yellow);
-  background-image: url("../images/services/delivery-car.svg");
-  background-repeat: no-repeat;
-  background-position: center;
 }
+
 .order-delivery-icon {
-
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-/* .order-delivery-link::after {
+/*           {
   position: absolute;
   top: 44px;
   right: 62px;
@@ -773,14 +780,255 @@ img {
 }
 
 .about-us {
-  width: 520px;
+  max-width: 520px;
   margin-right: 108px;
 }
 
-.about-us-title {
+.contacts-block {
+  max-width: 532px;
+}
+
+.section-info {
+  position: relative;
+}
+
+.section-info::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 84px;
+  height: 7px;
+  background-color: var(--basic-black);
+}
+
+.section-info-title {
+  margin-top: 40px;
   margin-bottom: 48px;
 }
 
-.contacts-block {
-  width: 532px;
+.section-info-text {
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+
+.section-info-list {
+  margin: 0;
+  margin-bottom: 30px;
+  padding: 0;
+  list-style-image: url("../images/icons/yellow-circle.svg")
+}
+
+.section-info-item {
+  padding-left: 26px;
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: -0.02em;
+  color: var(--basic-black)
+}
+
+.section-info-item:not(:last-child) {
+  margin-bottom: 19px;
+}
+
+.section-info-subtitle {
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-weight: 700;
+  font-size: 24px;
+}
+
+.contacts-address {
+  margin-bottom: 30px;
+}
+
+.contacts-address-text {
+  margin: 0;
+  font-style: normal;
+}
+
+.contacts-phone {
+  font-style: normal;
+  color: var(--basic-dark);
+}
+
+.contacts-schedule {
+  margin: 0;
+  margin-bottom: 30px;
+  padding: 0;
+  list-style-type: none;
+}
+
+.subscribe {
+  background-color: var(--basic-light);
+  padding-top: 64px;
+  padding-bottom: 56px;
+}
+
+.subscribe-text-container {
+  display: flex;
+  margin-bottom: 144px;
+  flex-wrap: wrap;
+}
+
+.subscribe-title {
+  max-width: 350px;
+  margin-right: 250px;
+}
+
+.subscribe-text {
+  max-width: 560px;
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+.subscribe-form-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.subscribe-form {
+  display: flex;
+}
+
+.subscribe-form-field {
+  font-family: inherit;
+  font-size: 18px;
+  line-height: 30px;
+  padding: 11px 16px 14px;
+  background-color: inherit;
+  border: none;
+  border-bottom: 3px solid var(--basic-dark-grey);
+  width: 557px;
+}
+
+.subscribe-button {
+  padding: 15px 36px;
+  border: 3px solid var(--basic-dark-grey);
+}
+
+.subscribe-for-free {
+  margin: 0;
+  align-self: center;
+}
+
+.for-free-icon {
+  margin-right: 16px;
+  color: var(--status-success);
+}
+
+.page-footer {
+  background-color: var(--basic-dark);
+  /* padding-bottom: 61px; */
+}
+
+.footer-logo {
+  margin-top: 62px;
+  margin-bottom: 35px;
+}
+
+.footer-line {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 64px;
+}
+
+.footer-contacts-address {
+  max-width: 240px;
+}
+
+.footer-contacts-text {
+  margin: 0;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 20px;
+  color: var(--basic-white);
+}
+
+.footer-services-list {
+  max-width: 444px;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: repeat(3, max-content);
+  gap: 35px;
+}
+
+.footer-services-link {
+  color: var(--basic-white);
+}
+
+.footer-address-phone {
+  font-size: 16px;
+  line-height: 20px;
+  font-style: normal;
+  color: var(--basic-white);
+}
+
+/* У чего сделать псевдоэлемент?
+ .footer-social::before {
+  content: "";
+  position: absolute;
+  width: 80px;
+  height: 7px;
+  background-color: var(--extra-yellow-dark);
+} */
+
+.footer-social {
+  max-width: 320px;
+  margin-right: 390px;
+}
+
+.footer-social-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.footer-social-link {
+  position: relative;
+  display: block;
+  min-width: 40px;
+  min-height: 40px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  color: inherit;
+}
+
+.social-link-icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  fill: var(--basic-dark);
+}
+
+.footer-social-item:not(:last-child) {
+  margin-right: 15px;
+  margin-bottom: 5px;
+}
+
+.htmlacademy-link {
+  position: relative;
+  display: block;
+  min-width: 115px;
+  min-height: 33px;
+}
+
+.htmlacademy-icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  fill: var(--extra-yellow-dark);
 }
