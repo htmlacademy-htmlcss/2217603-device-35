@@ -1276,6 +1276,19 @@ img {
 .contacts-phone {
   font-style: normal;
   color: var(--basic-dark);
+  outline-offset: 2px;
+}
+
+.contacts-phone:hover {
+  color: var(--extra-yellow-dark);
+}
+
+.contacts-phone:active {
+  opacity: 0.3;
+}
+
+.contacts-phone:focus {
+  outline: 2px solid var(--extra-purple);
 }
 
 .contacts-schedule {
@@ -2071,8 +2084,7 @@ img {
   outline: 2px solid var(--extra-purple);
 }
 
-/*Products*/
-
+/*Product-cards*/
 .product-block {
   background-color: var(--basic-white);
   padding: 70px 40px 78px;
@@ -2090,11 +2102,13 @@ img {
 
 .product-card-image {
   display: block;
+  margin-bottom: 32px;
 }
 
-.product-card-image-link {
+.product-card-link {
   display: block;
-  margin-bottom: 32px;
+  text-decoration: none;
+  color: inherit;
 }
 
 .product-card-content {
@@ -2103,14 +2117,8 @@ img {
   justify-content: space-between;
 }
 
-.product-card-title-link {
-  max-width: 226px;
-  display: block;
-  text-decoration: none;
-  color: inherit;
-}
-
 .product-card-title {
+  max-width: 226px;
   margin: 0;
   font-weight: 700;
   font-size: 18px;
@@ -2123,8 +2131,84 @@ img {
   color: var(--basic-dark);
 }
 
-.product-card-button {
+.product-card {
+  position: relative;
+  outline-offset: 2px;
+}
+
+.product-card-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 360px;
+  height: 380px;
+  background-color: rgba(240, 240, 240, 0.8);
   display: none;
+  z-index: 1;
+}
+
+.product-card-button {
+  width: 100%;
+  max-width: 220px;
+  max-height: 40px;
+  padding: 10px 5px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: transparent;
+  display: block;
+}
+
+.product-card-button::before {
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: translateY(-50%) scaleY(0.2);
+  background-color: var(--extra-yellow);
+  z-index: -1;
+}
+
+.product-card:hover .product-card-container {
+  display: flex;
+}
+
+.product-card:hover .product-card-content {
+  opacity: 0.6;
+}
+
+.product-card:active .product-card-button::before {
+  background-color: var(--extra-yellow-dark);
+}
+
+.product-card:active .product-card-content {
+  opacity: 0.3;
+}
+
+.product-card:focus-within {
+  outline: 2px solid var(--extra-purple);
+}
+
+.product-card-link:focus {
+  outline: none;
+}
+
+.new-product {
+  position: relative;
+}
+
+.new-product::after {
+  content: "";
+  position: absolute;
+  top: 27px;
+  right: 27px;
+  width: 60px;
+  height: 60px;
+  background-image: url("../images/icons/new-badge.svg");
+  background-repeat: no-repeat;
 }
 
 .button-extra {
@@ -2155,6 +2239,7 @@ img {
   opacity: 0.3;
 }
 
+/*Pagination*/
 .pagination-container {
   background-color: var(--basic-light-grey);
   display: flex;
