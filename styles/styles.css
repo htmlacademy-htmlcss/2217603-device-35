@@ -411,6 +411,10 @@ img {
   border-bottom: 2px solid var(--basic-black);
 }
 
+.navigation-link.is-active:hover {
+  opacity: 1;
+}
+
 .navigation-menu-item {
   position: relative;
 }
@@ -608,6 +612,7 @@ img {
   margin-right: auto;
   position: relative;
   padding: 2px;
+  outline-offset: 2px;
 }
 
 .basket-item-image {
@@ -627,10 +632,11 @@ img {
 .basket-item-button {
   background-color: inherit;
   color: var(--basic-white);
-  padding: 2px;
+  padding: 0;
   border: none;
   align-self: flex-start;
-  position: relative;
+  cursor: pointer;
+  outline-offset: 2px;
 }
 
 .basket-total {
@@ -654,13 +660,10 @@ img {
   padding: 14px 23px;
   margin: 20px;
   position: relative;
+  outline-offset: 2px;
 }
 
 .basket-item-wrapper:hover {
-  opacity: 0.6;
-}
-
-.basket-item-button:hover {
   opacity: 0.6;
 }
 
@@ -668,46 +671,20 @@ img {
   opacity: 0.3;
 }
 
+.basket-item-button:hover {
+  opacity: 0.6;
+}
+
 .basket-item-button:active {
   opacity: 0.3;
 }
 
-.basket-item-wrapper::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.basket-item-wrapper:focus-within {
   outline: 2px solid var(--extra-purple);
-  width: 100%;
-  height: 100%;
-  display: none;
-  z-index: 2;
-}
-
-.basket-item-wrapper:focus-within::after {
-  display: block;
-}
-
-.basket-item-button::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  outline: 2px solid var(--extra-purple);
-  width: 100%;
-  height: 100%;
-  display: none;
-  z-index: 2;
 }
 
 .basket-item-button:focus {
-  outline: none;
-}
-
-.basket-item-button:focus::after {
-  display: block;
+  outline: 2px solid var(--extra-purple);
 }
 
 .popover-basket-button:hover {
@@ -719,25 +696,8 @@ img {
   opacity: 0.3;
 }
 
-.popover-basket-button::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  outline: 2px solid var(--extra-purple);
-  width: 100%;
-  height: 100%;
-  display: none;
-  z-index: 2;
-}
-
 .popover-basket-button:focus {
-  outline: none;
-}
-
-.popover-basket-button:focus::after {
-  display: block;
+  outline: 2px solid var(--extra-purple);
 }
 
 .popover-basket-button:disabled {
@@ -1933,6 +1893,7 @@ img {
   position: relative;
   display: block;
   padding-left: 36px;
+  cursor: pointer;
 }
 
 .control-mark {
@@ -2324,9 +2285,11 @@ img {
   outline-offset: 2px;
 }
 
-.pagination-link:hover {
+.pagination-link:hover:not(span) {
   color: var(--basic-dark);
 }
+
+
 
 .pagination-link:active {
   color: rgba(68, 68, 68, 0.1);
@@ -2446,7 +2409,6 @@ img {
   background-color: var(--basic-grey);
 }
 
-/*.modal-field:active*/
 .modal-field:focus {
   outline: 2px solid var(--extra-purple);
 }
@@ -2475,6 +2437,7 @@ img {
   color: var(--basic-black);
   font-size: 14px;
   line-height: 20px;
+  display: none;
 }
 
 .message-error {
@@ -2487,16 +2450,18 @@ img {
   width: 540px;
 }
 
-.modal-amount-icon {
+.modal-tooltip-container {
   position: relative;
-  margin-bottom: 4px;
+  display: inline-flex;
 }
 
 .tooltip {
-  position: absolute;
+  position: relative;
+  top: -8px;
 }
 
 .tooltip-toggle {
+  position: relative;
   border: none;
   background-color: var(--extra-yellow);
   border-radius: 50%;
@@ -2509,21 +2474,23 @@ img {
   background-image: url("../images/icons/info.svg");
   background-repeat: no-repeat;
   background-position: center;
+  cursor: pointer;
 }
 
 .tooltip-text {
   position: relative;
-  margin-top: 10px;
-  margin-left: -65%;
+  top: 36px;
+  right: 138px;
   background-color: var(--basic-black);
   color: var(--basic-white);
   font-size: 16px;
   line-height: 20px;
+  text-align: left;
   box-shadow: 0 10px 0 rgba(0, 0, 0, 0.1);
-  padding: 19px 17px 19px 19px;
+  padding: 19px 17px 19px 21px;
   width: 200px;
   display: none;
-  z-index: 1;
+  z-index: 2;
 }
 
 .tooltip-text::before {
@@ -2536,13 +2503,13 @@ img {
   right: 42px;
 }
 
-.tooltip-toggle:hover + .tooltip-text,
-.tooltip-toggle:focus + .tooltip-text {
+.tooltip-toggle:hover .tooltip-text,
+.tooltip-toggle:focus .tooltip-text {
   display: block;
 }
 
 .tooltip-toggle:focus {
-  outline-color: var(--extra-purple);
+  outline: 2px solid var(--extra-purple);
 }
 
 .amount-container {
@@ -2550,7 +2517,13 @@ img {
 }
 
 .field-amount {
-  width: 60px;
+  max-width: 60px;
+  z-index: 1;
+  padding: 20px 24px;
+}
+
+.amount-container.error {
+  border: 2px solid var(--status-error);
 }
 
 .button-amount {
@@ -2561,6 +2534,7 @@ img {
   cursor: pointer;
   background-color: var(--basic-light);
   position: relative;
+  /* z-index: 1; */
 }
 
 .amount-icon {
@@ -2572,10 +2546,10 @@ img {
   left: 0;
   margin: auto;
 }
-/* Ошибка в макете?
+
 .button-amount:hover {
   background-color: var(--basic-light-grey);
-} */
+}
 
 .button-amount:hover .amount-icon {
   opacity: 0.6;
@@ -2591,11 +2565,6 @@ img {
 
 .button-amount:disabled {
   opacity: 0.3;
-}
-
-/*Не работает*/
-.field-amount:focus {
-  border:  2px solid var(--extra-purple);
 }
 
 

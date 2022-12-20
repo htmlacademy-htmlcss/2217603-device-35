@@ -48,7 +48,7 @@
               </a>
             </li>
             <li class="navigation-item basket">
-              <a class="navigation-link" href="#">
+              <a class="navigation-link" href="#" title="Нажмите, чтобы открыть">
                 <span class="visually-hidden">Товаров в корзине</span>
                 <span class="basket-count">2</span>
                 <svg class="navigation-icon" aria-hidden="true" focusable="false" width="16" height="14" fill="none"
@@ -70,9 +70,10 @@
                         <a class="basket-item-title" href="#">Любительская <br>селфи-палка</a>
                       </div>
                       <button class="basket-item-button" type="button">
-                        <svg class="basket-item-button-icon" aria-hidden="true" focusable="false" width="11" height="11"
+                        <svg class="basket-item-button-icon" aria-hidden="true" focusable="false" width="10" height="11"
                           fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="m11 1-1-1-4.5 4.5L1 0 0 1l4.5 4.5L0 10l1 1 4.5-4.5L10 11l1-1-4.5-4.5L11 1Z"
+                          <path
+                            d="M10 1.08 9.1.17 5 4.26.9.16l-.9.92 4.1 4.09L0 9.26l.9.9L5 6.09l4.1 4.09.9-.91-4.1-4.1L10 1.09Z"
                             fill="currentColor" />
                         </svg>
                         <span class="visually-hidden">Удалить из корзины</span>
@@ -629,15 +630,17 @@
                   placeholder="В свободной форме">
               </p>
               <p class="field-group">
-                <span class="modal-amount-icon">
+                <span class="modal-tooltip-container">
                   <label class="modal-label" for="amount-input">Количество:</label>
                   <span class="tooltip">
-                    <button class="tooltip-toggle" type="button" aria-labelledby="tooltip-label-amount"></button>
-                    <span class="tooltip-text" role="tooltip" id="tooltip-label-amount">Постараемся найти, сколько
-                      нужно. Привезём сколько получится по требованиям к провозу багажа.</span>
+                    <button class="tooltip-toggle" type="button" aria-labelledby="tooltip-label-amount">
+                      <span class="tooltip-text" role="tooltip" id="tooltip-label-amount">Постараемся найти, сколько
+                        нужно. Привезём сколько получится по требованиям к провозу багажа.</span>
+                    </button>
                   </span>
+
                 </span>
-                <span class="amount-container order-amount">
+                <span class="amount-container">
                   <button class="button-amount button-minus" type="button">
                     <svg class="amount-icon" aria-hidden="true" focusable="false" width="16" height="2" fill="none"
                       xmlns="http://www.w3.org/2000/svg">
